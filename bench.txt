@@ -1,0 +1,80 @@
+constant * wire vector len 0
+
+setup time 392.2103ms
+prove time 152.5511ms
+constant * wire vector len 1000
+
+setup time 1.2044189s
+prove time 765.4836ms
+constant * wire vector len 2000
+
+setup time 3.0976152s
+prove time 2.5905262s
+constant * wire vector len 3000
+
+setup time 6.2769459s
+prove time 5.5853167s
+constant * wire vector len 4000
+
+setup time 10.4710838s
+prove time 9.8470757s
+constant * wire vector len 5000
+
+setup time 15.7562915s
+prove time 15.0954382s
+constant * wire vector len 6000
+
+setup time 22.3773935s
+prove time 21.6819124s
+constant * wire vector len 7000
+
+setup time 30.0919674s
+prove time 29.3727207s
+constant * wire vector len 8000
+
+setup time 38.9455387s
+prove time 38.183711s
+constant * wire vector len 9000
+
+setup time 49.4283801s
+prove time 48.5157542s
+wire * wire vector len 0
+
+setup time 397.8886ms
+prove time 146.5495ms
+wire * wire vector len 1000
+
+setup time 3.6043346s
+prove time 1.3823052s
+wire * wire vector len 2000
+
+setup time 7.4565114s
+prove time 3.7369455s
+wire * wire vector len 3000
+
+setup time 12.9004129s
+prove time 7.5955755s
+wire * wire vector len 4000
+
+setup time 18.315156s
+prove time 12.2227062s
+wire * wire vector len 5000
+
+setup time 26.3536503s
+prove time 18.5855716s
+wire * wire vector len 6000
+
+setup time 35.0514721s
+prove time 25.5198866s
+wire * wire vector len 7000
+
+setup time 43.0864217s
+prove time 33.5388079s
+wire * wire vector len 8000
+
+setup time 53.5744432s
+prove time 43.0881944s
+wire * wire vector len 9000
+
+setup time 67.1009791s
+prove time 54.9153954s

@@ -1,0 +1,11 @@
+/home/liankeqin/TinyQuantCNN/vector-dot-microbench/target/debug/deps/generic_array-ebafd9c0a8bfa826.rmeta: /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/lib.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/hex.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/impls.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/arr.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/functional.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/iter.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/sequence.rs
+
+/home/liankeqin/TinyQuantCNN/vector-dot-microbench/target/debug/deps/generic_array-ebafd9c0a8bfa826.d: /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/lib.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/hex.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/impls.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/arr.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/functional.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/iter.rs /home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/sequence.rs
+
+/home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/lib.rs:
+/home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/hex.rs:
+/home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/impls.rs:
+/home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/arr.rs:
+/home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/functional.rs:
+/home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/iter.rs:
+/home/liankeqin/.cargo/registry/src/github.com-1ecc6299db9ec823/generic-array-0.12.3/src/sequence.rs:

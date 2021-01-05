@@ -1,0 +1,107 @@
+constant * wire vector len 0
+start synthesize circuit
+start inline lcs
+remove 0ns
+extend 0ns
+ compactify 0ns
+ insert 0ns
+
+start Constructing evaluation domain
+start R1CS to QAP
+allocate a,b and c
+start Compute query densities
+start Compute G window table
+start Generate the R1CS proving key
+start A-query
+start H-query
+start L-query
+start Generate R1CS verification key
+setup time 443.8859ms
+remove 0ns
+extend 0ns
+ compactify 0ns
+ insert 0ns
+
+prove time 198.7753ms
+constant * wire vector len 1000
+start synthesize circuit
+start inline lcs
+remove 1.9386ms
+extend 597.5936ms
+ compactify 91.6802ms
+ insert 1.3637ms
+
+start Constructing evaluation domain
+start R1CS to QAP
+allocate a,b and c
+start Compute query densities
+start Compute G window table
+start Generate the R1CS proving key
+start A-query
+start H-query
+start L-query
+start Generate R1CS verification key
+setup time 1.2441259s
+remove 1.4874ms
+extend 557.4446ms
+ compactify 86.9216ms
+ insert 1.1148ms
+
+prove time 826.3032ms
+constant * wire vector len 4000
+start synthesize circuit
+start inline lcs
+remove 8.062ms
+extend 8.7043432s
+ compactify 1.33483s
+ insert 5.3259ms
+
+start Constructing evaluation domain
+start R1CS to QAP
+allocate a,b and c
+start Compute query densities
+start Compute G window table
+start Generate the R1CS proving key
+start A-query
+start H-query
+start L-query
+start Generate R1CS verification key
+setup time 10.9904376s
+remove 9.447ms
+extend 8.8315122s
+ compactify 1.3553167s
+ insert 5.7702ms
+
+prove time 10.4297215s
+constant * wire vector len 9000
+start synthesize circuit
+start inline lcs
+remove 35.9211ms
+extend 44.7930805s
+ compactify 6.8250713s
+ insert 18.9958ms
+
+start Constructing evaluation domain
+start R1CS to QAP
+allocate a,b and c
+start Compute query densities
+start Compute G window table
+start Generate the R1CS proving key
+start A-query
+start H-query
+start L-query
+start Generate R1CS verification key
+setup time 53.1334597s
+remove 25.1508ms
+extend 43.5880932s
+ compactify 6.6582749s
+ insert 14.8059ms
+
+prove time 50.6109697s
+constant * wire vector len 16000
+start synthesize circuit
+start inline lcs
+remove 55.0963ms
+extend 135.1041319s
+ compactify 20.6809541s
+ insert 30.7052ms
