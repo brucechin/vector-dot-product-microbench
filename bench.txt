@@ -1,134 +1,313 @@
-constant * wire vector len 0
-setup time 392.2103ms
-prove time 152.5511ms
+constant * constant vector len 1000
+start inline lcs
+remove 997.8µs
+extend 3.4961ms
+ compactify 1.602ms
+ insert 836.3µs
+
+finish inline lcs
+allocate a,b and c
+setup time 421.3778ms
+remove 982.2µs
+extend 3.4655ms
+ compactify 1.55ms
+ insert 815µs
+
+prove time 161.2389ms
+num of constraints 0
+
 
 
 
 constant * wire vector len 1000
-setup time 1.2044189s
-prove time 765.4836ms
+start inline lcs
+remove 1.1097ms
+extend 512.1677ms
+ compactify 78.3254ms
+ insert 872.1µs
 
+finish inline lcs
+allocate a,b and c
+setup time 1.1168016s
+remove 1.2297ms
+extend 524.6637ms
+ compactify 80.1377ms
+ insert 925.7µs
 
+prove time 772.312ms
+num of constraints 0
 
-constant * wire vector len 2000
-setup time 3.0976152s
-prove time 2.5905262s
-
-
-
-constant * wire vector len 3000
-setup time 6.2769459s
-prove time 5.5853167s
-
-
-
-constant * wire vector len 4000
-setup time 10.4710838s
-prove time 9.8470757s
-
-
-
-constant * wire vector len 5000
-setup time 15.7562915s
-prove time 15.0954382s
-wire * wire vector len 5000
-setup time 26.3536503s
-prove time 18.5855716s
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-constant * wire vector len 6000
-setup time 22.3773935s
-prove time 21.6819124s
-
-
-
-constant * wire vector len 7000
-setup time 30.0919674s
-prove time 29.3727207s
-
-
-
-constant * wire vector len 8000
-setup time 38.9455387s
-prove time 38.183711s
-
-
-
-constant * wire vector len 9000
-setup time 49.4283801s
-prove time 48.5157542s
-
-
-
-wire * wire vector len 0
-setup time 397.8886ms
-prove time 146.5495ms
 
 
 
 wire * wire vector len 1000
-setup time 3.6043346s
-prove time 1.3823052s
+start inline lcs
+remove 3.0214ms
+extend 542.5624ms
+ compactify 84.0614ms
+ insert 10.6025ms
+
+finish inline lcs
+allocate a,b and c
+setup time 3.7396634s
+remove 2.7543ms
+extend 529.2087ms
+ compactify 81.2251ms
+ insert 10.0723ms
+
+prove time 1.3842413s
+num of constraints 1000
 
 
 
-wire * wire vector len 2000
-setup time 7.4565114s
-prove time 3.7369455s
+
+constant * constant vector len 3000
+start inline lcs
+remove 2.9495ms
+extend 10.1704ms
+ compactify 4.6432ms
+ insert 2.4494ms
+
+finish inline lcs
+allocate a,b and c
+setup time 463.405ms
+remove 3.0319ms
+extend 10.4439ms
+ compactify 4.7238ms
+ insert 2.4642ms
+
+prove time 205.1536ms
+num of constraints 0
+
+
+
+
+constant * wire vector len 3000
+start inline lcs
+remove 4.0791ms
+extend 4.615643s
+ compactify 693.3592ms
+ insert 2.9594ms
+
+finish inline lcs
+allocate a,b and c
+setup time 6.2356922s
+remove 4.6122ms
+extend 4.7555304s
+ compactify 706.8928ms
+ insert 3.2115ms
+
+prove time 5.6649197s
+num of constraints 0
+
 
 
 
 wire * wire vector len 3000
-setup time 12.9004129s
-prove time 7.5955755s
+start inline lcs
+remove 10.7396ms
+extend 4.7318937s
+ compactify 708.1069ms
+ insert 34.784ms
+
+finish inline lcs
+allocate a,b and c
+setup time 13.0655565s
+remove 11.6606ms
+extend 4.8476337s
+ compactify 720.9243ms
+ insert 35.2564ms
+
+prove time 7.9528943s
+num of constraints 3000
 
 
 
-wire * wire vector len 4000
-setup time 18.315156s
-prove time 12.2227062s
+
+constant * constant vector len 5000
+start inline lcs
+remove 4.8948ms
+extend 16.7373ms
+ compactify 7.6398ms
+ insert 4.0736ms
+
+finish inline lcs
+allocate a,b and c
+setup time 524.7931ms
+remove 4.9405ms
+extend 16.8597ms
+ compactify 7.6881ms
+ insert 4.0837ms
+
+prove time 238.4835ms
+num of constraints 0
+
+
+
+
+constant * wire vector len 5000
+start inline lcs
+remove 16.5935ms
+extend 13.4135937s
+ compactify 1.9976667s
+ insert 8.8455ms
+
+finish inline lcs
+allocate a,b and c
+setup time 16.454593s
+remove 9.3506ms
+extend 13.031288s
+ compactify 1.9402304s
+ insert 6.1439ms
+
+prove time 15.232392s
+num of constraints 0
+
 
 
 
 wire * wire vector len 5000
-setup time 26.3536503s
-prove time 18.5855716s
+start inline lcs
+remove 17.5978ms
+extend 12.9662887s
+ compactify 1.9311613s
+ insert 58.5886ms
+
+finish inline lcs
+allocate a,b and c
+setup time 26.3857862s
+remove 17.9957ms
+extend 13.0423752s
+ compactify 1.9374618s
+ insert 59.1134ms
+
+prove time 18.6117731s
+num of constraints 5000
 
 
 
-wire * wire vector len 6000
-setup time 35.0514721s
-prove time 25.5198866s
+
+constant * constant vector len 7000
+start inline lcs
+remove 6.7636ms
+extend 23.0063ms
+ compactify 10.6503ms
+ insert 5.6304ms
+
+finish inline lcs
+allocate a,b and c
+setup time 525.6787ms
+remove 7.0669ms
+extend 23.9182ms
+ compactify 11.0372ms
+ insert 5.907ms
+
+prove time 269.0661ms
+num of constraints 0
+
+
+
+
+constant * wire vector len 7000
+start inline lcs
+remove 11.2103ms
+extend 25.1047838s
+ compactify 3.748643s
+ insert 7.9078ms
+
+finish inline lcs
+allocate a,b and c
+setup time 29.8623518s
+remove 11.4061ms
+extend 25.060626s
+ compactify 3.7454393s
+ insert 7.9621ms
+
+prove time 29.0732478s
+num of constraints 0
+
 
 
 
 wire * wire vector len 7000
-setup time 43.0864217s
-prove time 33.5388079s
+start inline lcs
+remove 28.154ms
+extend 25.476463s
+ compactify 3.7808786s
+ insert 86.4426ms
+
+finish inline lcs
+allocate a,b and c
+setup time 43.7045614s
+remove 34.7896ms
+extend 25.9188171s
+ compactify 3.840395s
+ insert 90.6402ms
+
+prove time 34.5811499s
+num of constraints 7000
 
 
 
-wire * wire vector len 8000
-setup time 53.5744432s
-prove time 43.0881944s
+
+constant * constant vector len 9000
+start inline lcs
+remove 8.9983ms
+extend 30.3072ms
+ compactify 13.8535ms
+ insert 7.2426ms
+
+finish inline lcs
+allocate a,b and c
+setup time 559.2486ms
+remove 9.062ms
+extend 30.7347ms
+ compactify 14.2163ms
+ insert 7.4781ms
+
+prove time 312.134ms
+num of constraints 0
+
+
+
+
+constant * wire vector len 9000
+start inline lcs
+remove 14.9852ms
+extend 41.2664553s
+ compactify 6.1726385s
+ insert 10.5927ms
+
+finish inline lcs
+allocate a,b and c
+setup time 48.8004774s
+remove 14.7549ms
+extend 41.2625576s
+ compactify 6.1632685s
+ insert 10.5039ms
+
+prove time 47.7498258s
+num of constraints 0
+
 
 
 
 wire * wire vector len 9000
-setup time 67.1009791s
-prove time 54.9153954s
+start inline lcs
+remove 34.9914ms
+extend 41.6865203s
+ compactify 6.1935713s
+ insert 111.6628ms
+
+finish inline lcs
+allocate a,b and c
+setup time 66.0935297s
+remove 35.4724ms
+extend 41.7387487s
+ compactify 6.1974861s
+ insert 112.4185ms
+
+prove time 54.6511864s
+num of constraints 9000
+
+

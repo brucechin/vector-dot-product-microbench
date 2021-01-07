@@ -26,10 +26,10 @@ impl ConstraintSynthesizer<Fq> for ConstantConstantDotProductCircuit {
 
             let mut tmp = FpVar::<Fq>::new_witness(r1cs_core::ns!(cs, "q1*q2 gadget"), || Ok(Fq::zero())).unwrap();
 
-            for i in 0..self.input.len() {
-                let w: Fq = self.weight[i].into();
+            for k in 0..self.input.len() {
+                let w: Fq = self.weight[k].into();
                 let w_const = FpVar::Constant(w);
-                let i: Fq = self.input[i].into();
+                let i: Fq = self.input[k].into();
                 let i_var = FpVar::Constant(i);
                 tmp += i_var.mul(w_const);
             }
@@ -52,10 +52,10 @@ impl ConstraintSynthesizer<Fq> for ConstantWireDotProductCircuit {
 
             let mut tmp = FpVar::<Fq>::new_witness(r1cs_core::ns!(cs, "q1*q2 gadget"), || Ok(Fq::zero())).unwrap();
 
-            for i in 0..self.input.len() {
-                let w: Fq = self.weight[i].into();
+            for k in 0..self.input.len() {
+                let w: Fq = self.weight[k].into();
                 let w_const = FpVar::Constant(w);
-                let i: Fq = self.input[i].into();
+                let i: Fq = self.input[k].into();
                 let i_var = FpVar::new_witness(r1cs_core::ns!(cs, "input"), || Ok(i)).unwrap();
                 tmp += i_var * w_const;
             }
@@ -78,11 +78,11 @@ impl ConstraintSynthesizer<Fq> for WireWireDotProductCircuit {
 
             let mut tmp = FpVar::<Fq>::new_witness(r1cs_core::ns!(cs, "q1*q2 gadget"), || Ok(Fq::zero())).unwrap();
 
-            for i in 0..self.input.len() {
-                let w: Fq = self.weight[i].into();
-                let w_const = FpVar::new_witness(r1cs_core::ns!(cs, "input"), || Ok(w)).unwrap();
-                let i: Fq = self.input[i].into();
-                let i_var = FpVar::new_witness(r1cs_core::ns!(cs, "input"), || Ok(i)).unwrap();
+            for k in 0..self.input.len() {
+                let w: Fq = self.weight[k].into();
+                let w_const = FpVar::new_witness(r1cs_core::ns!(cs, format!("weight {}", k)), || Ok(w)).unwrap();
+                let i: Fq = self.input[k].into();
+                let i_var = FpVar::new_witness(r1cs_core::ns!(cs, format!("input {}", k)), || Ok(i)).unwrap();
                 tmp += i_var.mul(w_const);
             }
             Ok(())
@@ -91,13 +91,47 @@ impl ConstraintSynthesizer<Fq> for WireWireDotProductCircuit {
 }
 
 fn main() {
-
     for i in (1..20).step_by(2) {
         let mut rng = rand::thread_rng();
         let len = 1000 * i ; 
         let x = vec![1u8; len];
         let y = vec![1u8; len];
         let cs1 = ConstraintSystem::<Fq>::new_ref();
+        println!("constant * constant vector len {}", len);
+        let constant_wire_dot_product_circuit = ConstantConstantDotProductCircuit{
+            input: x.clone(), 
+            weight: y.clone(),
+        };
+        let begin = Instant::now();
+
+        // pre-computed parameters
+        let param =
+            generate_random_parameters::<algebra::Bls12_381, _, _>(constant_wire_dot_product_circuit.clone(), &mut rng)
+                .unwrap();
+        let end = Instant::now();
+        println!("setup time {:?}", end.duration_since(begin));
+
+
+        let pvk = prepare_verifying_key(&param.vk);
+
+        // prover
+        let begin = Instant::now();
+        let proof = create_random_proof(constant_wire_dot_product_circuit.clone(), &param, &mut rng).unwrap();
+        let end = Instant::now();
+        println!("prove time {:?}", end.duration_since(begin));
+        constant_wire_dot_product_circuit.clone()
+                                .generate_constraints(cs1.clone())
+                                .unwrap();
+        println!("num of constraints {}\n\n\n\n", cs1.num_constraints());
+
+    
+
+
+        let mut rng = rand::thread_rng();
+        let len = 1000 * i ; 
+        let x = vec![1u8; len];
+        let y = vec![1u8; len];
+        let cs2 = ConstraintSystem::<Fq>::new_ref();
         println!("constant * wire vector len {}", len);
         let constant_wire_dot_product_circuit = ConstantWireDotProductCircuit{
             input: x.clone(), 
@@ -117,21 +151,25 @@ fn main() {
 
         // prover
         let begin = Instant::now();
-        let proof = create_random_proof(constant_wire_dot_product_circuit, &param, &mut rng).unwrap();
+        let proof = create_random_proof(constant_wire_dot_product_circuit.clone(), &param, &mut rng).unwrap();
         let end = Instant::now();
         println!("prove time {:?}", end.duration_since(begin));
+        constant_wire_dot_product_circuit.clone()
+        .generate_constraints(cs2.clone())
+        .unwrap();
+        println!("num of constraints {}\n\n\n\n", cs2.num_constraints());
 
 
-    }
+    
 
-    for i in (1..20).step_by(2) {
+
         let mut rng = rand::thread_rng();
         let len = 1000 * i; 
         let x = vec![1u8; len];
         let y = vec![1u8; len];
-        let cs1 = ConstraintSystem::<Fq>::new_ref();
+        let cs3 = ConstraintSystem::<Fq>::new_ref();
         println!("wire * wire vector len {}", len);
-        let constant_wire_dot_product_circuit = WireWireDotProductCircuit{
+        let wire_wire_dot_product_circuit = WireWireDotProductCircuit{
             input: x.clone(), 
             weight: y.clone(),
         };
@@ -139,7 +177,7 @@ fn main() {
 
         // pre-computed parameters
         let param =
-            generate_random_parameters::<algebra::Bls12_381, _, _>(constant_wire_dot_product_circuit.clone(), &mut rng)
+            generate_random_parameters::<algebra::Bls12_381, _, _>(wire_wire_dot_product_circuit.clone(), &mut rng)
                 .unwrap();
         let end = Instant::now();
         println!("setup time {:?}", end.duration_since(begin));
@@ -149,9 +187,13 @@ fn main() {
 
         // prover
         let begin = Instant::now();
-        let proof = create_random_proof(constant_wire_dot_product_circuit, &param, &mut rng).unwrap();
+        let proof = create_random_proof(wire_wire_dot_product_circuit.clone(), &param, &mut rng).unwrap();
         let end = Instant::now();
         println!("prove time {:?}", end.duration_since(begin));
+        wire_wire_dot_product_circuit.clone()
+        .generate_constraints(cs3.clone())
+        .unwrap();
+        println!("num of constraints {}\n\n\n\n", cs3.num_constraints());
 
 
     }
